@@ -26,7 +26,7 @@ export function getUrl(resource: string, baseUrl?: string): string  {
         resultantUrl.auth = resultantUrl.auth || base.auth;
         resultantUrl.host = resultantUrl.host || base.host;
 
-        resultantUrl.pathname = path.posix.resolve(base.pathname, resultantUrl.pathname);
+        resultantUrl.pathname = path.resolve(base.pathname, resultantUrl.pathname);
 
         if (!resultantUrl.pathname.endsWith('/') && resource.endsWith('/')) {
             resultantUrl.pathname += '/';
